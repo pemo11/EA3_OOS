@@ -1,0 +1,91 @@
+/* CSS-Style fuer EA3 */
+
+body {
+  font-family: verdana;
+  font-size: 11pt;
+}
+
+img {
+  margin: 24px;
+}
+
+.header1 {
+  font-size: 20pt;
+  font-weight: bolder;
+  width: 600px;
+  height: 40px;
+  margin: 24px;
+  color:steelblue;
+}
+
+.header2 {
+  font-size: 16pt;
+  font-weight: bolder;
+  width: 600px;
+  margin: 24px;
+  color: darkorange;
+}
+
+.userInfo {
+  font-size: 11pt;
+  margin: 24px;
+  width: 240px;
+  background-color: lightblue;
+}
+
+.logoutLink {
+   font-size: 11pt;
+   margin: 24px;
+   text-decoration: none;
+}
+
+table {
+  margin: 24px;
+}
+
+#summary tr:nth-child(even)
+{
+  background-color: #f2f2f2;
+}
+
+#summary tr:hover
+{
+  background-color: #ddd;
+}
+  
+#summary td, th {
+  border: 1px solid #ddd;
+  padding: 4px;
+}
+
+#summary th {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+
+#movie tr:nth-child(even)
+{
+  background-color: #f2f2f2;
+}
+
+#movie tr:hover
+{
+  background-color: #ddd;
+}
+  
+#movie td, th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#movie th {
+  padding-top: 8px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: darkorange;
+  color: white;
+}
+

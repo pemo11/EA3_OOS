@@ -1,0 +1,39 @@
+{% load static %}
+{% load socialaccount %}
+
+<link rel='stylesheet' type='text/css' href='/static/styles.css' ></link>
+<img src='/static/images/kinologo.jpg' width='600' height='200' />
+
+{% if user.is_authenticated %}
+<div class='userinfo'>Hallo, {{ user.username }}</div>
+<a href="/accounts/logout/" class="logoutLink">Abmelden</a>
+{% else %}
+<a href="{% provider_login_url 'github' %}">Anmelden</a>
+{% endif %}
+
+<div class='header1'>EA3 - Filmabend</div>
+<div class='header2'>Wähle Deinen Film für den nächsten Kinoabend</div>
+
+    <table id="movie">
+        <tr><th>Nr</th><th>Film</th><th>Kategorie</th><th></th><th>Stimmen</th><th></th></tr>
+        {% for movie in Movies %}
+        <tr>
+            <td>{{ movie.id }}</td>
+            <td>{{ movie.title_text }}</td>
+            <td>{{ movie.category.category}} </td>
+            <td><img src='/static/images/{{ movie.posterPath }}'</td>
+            <td>{{ movie.voteCount }}</td>
+            {% if user.is_authenticated %}
+            <form action="#" method="get">
+                <td>
+                    <input type="hidden" name="movieIdInput" value="{{movie.id}}" />
+                    <input type="submit" class="btn" value="Abstimmen" name="btnVote"/>
+                </td>    
+            </form>
+            {% endif %}
+    </tr>
+        {% endfor %}
+    </table>
+
+    <a href="{% url 'VoteSummary' %}">Zusammenfassung</a>
+</form>

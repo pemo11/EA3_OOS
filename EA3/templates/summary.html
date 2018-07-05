@@ -1,0 +1,18 @@
+{% load static %}
+
+<link rel='stylesheet' type='text/css' href='/static/styles.css' ></link>
+<img src='/static/images/kinologo.jpg' width='600' height='200' />
+
+<div class="header1">Zusammenfassung</div>
+
+<table id="summary">
+    <tr><th>Film</th><th>Anzahl Stimmen</th></tr>
+    {% for movie in Movies %}
+    <tr>
+        <td>{{ movie.title_text }}</td>
+        <td>{{ movie.voteCount }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'index' %}">Zurück</a>
